@@ -1,30 +1,37 @@
+import java.util.ArrayList;
 public class Slot {
-   private Product product;
+   //NEW: Stock = Array List of Products, each instance = 1 stock
    private boolean availability; 
-   private int stock; 
-
-
+   private Product product; //for getters
+   private ArrayList<Product> stock; 
+   
    public Slot(Product product, int stock) {
-      this.product = product;
       this.availability = true; //stock cannot be 0 on creation
-      this.stock = stock;
+      this.product = product;
+      this.stock = intializeStock(stock, product);
    }
 
+   //Intialize Stock, int stock = number of product instances 
+   //IN MAIN -> addStock(stock input,getProduct())
+   public ArrayList<Product> intializeStock(int stock, Product product) {
+      ArrayList<Product> initialStock = new ArrayList<Product>();
+      for (int i = 0; i < stock; i++) {
+         initialStock.add(product);
+      }
+      return initialStock;
+   }
+   
    public void updateSlotAvailability(){
-      if (this.stock == 0) 
+      if (stock.isEmpty()) 
          this.availability = false;
       else 
          this.availability = true;
    }
 
+   //Removes 1 instance of the product from <Product> Stock
    public void dispenseProduct() {
-      this.stock--;
+      stock.remove(0); //remove instance at first index
       updateSlotAvailability();
-   }
-
-   //Replace product in the slot
-   public void replaceProduct(Product newProduct) {
-      this.product = newProduct;
    }
 
    public Product getProduct() {
@@ -33,17 +40,26 @@ public class Slot {
    public boolean getAvailability() {
       return availability;
    }
+   
    public int getStock() {
-      return stock;
+      return stock.size();
    }
    
-   public void setStock(int stock) {
-      this.stock = stock;
+   //Set Stock, current stock + new stock
+   public void addStock(int stock) {
+      for (int i = 0; i < stock; i++) {
+         this.stock.add(product);
+      }
    }
 
    //Edit price of product in the slot
    public void editPrice(int newPrice) {
       this.product.setPrice(newPrice);
+   }
+
+   //TEST return stock arraylist
+   public ArrayList<Product> getStockArray() {
+      return stock;
    }
 
 }
