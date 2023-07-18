@@ -1,7 +1,7 @@
 public abstract class Product {
-   private String name; 
-   private int price;
-   private int calories; 
+   protected String name; 
+   protected int price;
+   protected int calories; 
 
    public Product(String name, int price, int calories) {
       this.name = name;

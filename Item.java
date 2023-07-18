@@ -5,6 +5,4 @@ public class Item extends Product {
    public Item(String name, int price, int calories) {
       super(name, price, calories); //calls constructor of parent class
    }
-
-   
 }
