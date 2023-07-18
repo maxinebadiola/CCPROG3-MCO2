@@ -55,4 +55,8 @@ public class Combo extends Product {
       }
       return totalCalories;
    }
+
+   public ArrayList<Item> getIngredients() {
+      return ingredients;
+   }
 }

@@ -95,7 +95,10 @@ public class Test
       System.out.println("Combo Price: " + combo.getPrice());
       System.out.println("Combo Calories: " + combo.getCalories());
       
-
+      //TEST PREPARATION 
+      Special special = new Special();
+      String preparationSteps = special.preparingCombo(combo);
+      System.out.println(preparationSteps);
 
    }
 }
