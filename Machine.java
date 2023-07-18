@@ -300,20 +300,6 @@ public class Machine {
       return totalSales;
    }
 
-   //Replace product of exisitng slot (slot, new product)
-   public boolean replaceProduct(int slotIndex, Product newProduct) {
-    String newName = newProduct.getName();
-    for (Slot slot : slotList) {
-        if (slot.getProduct().getName().equalsIgnoreCase(newName)) {
-            return false; // duplicate 
-        }
-    }
-    
-    Slot slot = slotList.get(slotIndex);
-    slot.replaceProduct(newProduct);
-    return true; // Product replacement successful
-}
-
    //INTIALIZE CURRENCY (Denominations 200 - 1)
    public void initializeCurrencies() {
       int[] values = {200, 100, 50, 20, 10, 5, 1};
