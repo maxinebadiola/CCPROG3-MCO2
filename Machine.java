@@ -153,7 +153,6 @@ public class Machine {
       }
    }
 
-
    //UPDATE Product Stock (AFTER SUCESSFUL TRANSACTION)
    public void updateStock(int slotIndex) {
       Slot slot = slotList.get(slotIndex);
@@ -173,7 +172,6 @@ public class Machine {
    }
 
    //MAITENANCE METHODS
-
    //Get total stock in every slot (MAX CAPACITY = 80)
    private int getTotalStock() {
       int totalStock = 0;
@@ -199,12 +197,12 @@ public class Machine {
    //Restocking Slots
    public void restockSlot(int slotIndex, int restockAmount) {
       Slot slot = slotList.get(slotIndex); //get slot
-      slot.setStock(slot.getStock() + restockAmount);
+      slot.addStock(restockAmount);
    }
 
    public void restockAllSlots(int restockAmount) {
       for (Slot slot : slotList) {
-         slot.setStock(slot.getStock() + restockAmount);
+         slot.addStock(restockAmount);
       }
    }
    
