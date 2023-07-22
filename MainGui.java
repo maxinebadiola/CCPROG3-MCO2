@@ -1,9 +1,17 @@
 
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -31,13 +39,16 @@ public class MainGui extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
         jOptionPane1 = new javax.swing.JOptionPane();
         jOptionPane2 = new javax.swing.JOptionPane();
         jLabel2 = new javax.swing.JLabel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jDialog1 = new javax.swing.JDialog();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -50,13 +61,102 @@ public class MainGui extends javax.swing.JFrame {
         confirmPurchaseButton = new javax.swing.JButton();
         transactionCancelButton = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
-        anotherPurchaseButton = new javax.swing.JButton();
         dispenseChangeButton = new javax.swing.JButton();
+        anotherPurchaseButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        restockSlotButton = new javax.swing.JRadioButton();
+        restockAllSlotsButton = new javax.swing.JRadioButton();
+        editProductPriceButton = new javax.swing.JRadioButton();
+        restockCurrencyButton = new javax.swing.JRadioButton();
+        restockAllCurrencyButton = new javax.swing.JRadioButton();
+        collectCurrencyButton = new javax.swing.JRadioButton();
+        collectAllCurrencyButton = new javax.swing.JRadioButton();
+        displayTransactionsButton = new javax.swing.JRadioButton();
+        displaySalesReportButton = new javax.swing.JRadioButton();
+        jLabel3 = new javax.swing.JLabel();
+        mainMenuButton = new javax.swing.JButton();
+        confirmMaintenanceButton = new javax.swing.JButton();
+        restockSlotPanel = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        restockInput = new javax.swing.JTextField();
+        returnToMaintenanceButton = new javax.swing.JButton();
+        restockAllSlotPanel = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        restockAllInput = new javax.swing.JTextField();
+        returnToMaintenanceButton2 = new javax.swing.JButton();
+        editPricePanel = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        editPriceInput = new javax.swing.JTextField();
+        returnToMaintenanceButton3 = new javax.swing.JButton();
+        restockCurrencyPanel = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        restockCurrencyInput = new javax.swing.JTextField();
+        returnToMaintenanceButton4 = new javax.swing.JButton();
+        restockAllCurrencyPanel = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        restockAllCurrencyInput = new javax.swing.JTextField();
+        returnToMaintenanceButton5 = new javax.swing.JButton();
+        collectCurrencyPanel = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        collectCurrencyInput = new javax.swing.JTextField();
+        returnToMaintenanceButton6 = new javax.swing.JButton();
+        collectAllCurrencyPanel = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        collectAllCurrencyInput = new javax.swing.JTextField();
+        returnToMaintenanceButton7 = new javax.swing.JButton();
+        displayTransactionsPanel = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        returnToMaintenanceButton8 = new javax.swing.JButton();
+        displaySalesReportPanel = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        returnToMaintenanceButton9 = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
+        jDialog1.setAlwaysOnTop(true);
+        jDialog1.setMinimumSize(new java.awt.Dimension(390, 300));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel7.setText("Error");
+
+        jLabel8.setText("Invalid Input");
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+                jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jDialog1Layout.createSequentialGroup()
+                                .addGap(159, 159, 159)
+                                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                        .addComponent(jLabel8)
+                                        .addComponent(jLabel7))
+                                .addContainerGap(165, Short.MAX_VALUE)));
+        jDialog1Layout.setVerticalGroup(
+                jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jDialog1Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(35, 35, 35)
+                                .addComponent(jLabel8)
+                                .addGap(0, 217, Short.MAX_VALUE)));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jTabbedPane1.setEnabled(false);
 
         jLabel1.setText("Regular Vending Machine");
 
@@ -81,17 +181,17 @@ public class MainGui extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(123, 123, 123)
+                                .addGap(151, 151, 151)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                                         .addComponent(exitOption)
                                         .addComponent(maintenanceOption)
                                         .addComponent(purchaseOption)
                                         .addComponent(jLabel1))
-                                .addContainerGap(134, Short.MAX_VALUE)));
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
+                                .addGap(26, 26, 26)
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
                                 .addComponent(purchaseOption)
@@ -99,7 +199,7 @@ public class MainGui extends javax.swing.JFrame {
                                 .addComponent(maintenanceOption)
                                 .addGap(18, 18, 18)
                                 .addComponent(exitOption)
-                                .addContainerGap(249, Short.MAX_VALUE)));
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
         jTabbedPane1.addTab("Main Menu", jPanel1);
 
@@ -124,25 +224,19 @@ public class MainGui extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
                 jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
+                                .addGap(43, 43, 43)
                                 .addComponent(confirmPurchaseButton)
-                                .addGap(47, 47, 47)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(transactionCancelButton)
-                                .addContainerGap(49, Short.MAX_VALUE)));
+                                .addGap(58, 58, 58)));
         jPanel5Layout.setVerticalGroup(
                 jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addGap(0, 12, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(confirmPurchaseButton)
                                         .addComponent(transactionCancelButton))));
-
-        anotherPurchaseButton.setText("Make Another Purchase");
-        anotherPurchaseButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                anotherPurchaseButtonActionPerformed(evt);
-            }
-        });
 
         dispenseChangeButton.setText("Dispense Change");
         dispenseChangeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -151,41 +245,51 @@ public class MainGui extends javax.swing.JFrame {
             }
         });
 
+        anotherPurchaseButton.setText("Make Another Purchase");
+        anotherPurchaseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                anotherPurchaseButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
                 jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addContainerGap()
+                                .addGap(20, 20, 20)
                                 .addComponent(anotherPurchaseButton)
-                                .addGap(40, 40, 40)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(dispenseChangeButton)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+                                .addGap(61, 61, 61)));
         jPanel6Layout.setVerticalGroup(
                 jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                .addGap(0, 12, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(anotherPurchaseButton)
-                                        .addComponent(dispenseChangeButton))));
+                                        .addComponent(dispenseChangeButton)
+                                        .addComponent(anotherPurchaseButton))));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addContainerGap())
-                        .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(6, 6, 6)));
+                                .addGap(6, 6, 6))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap()));
         jPanel2Layout.setVerticalGroup(
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
@@ -198,18 +302,697 @@ public class MainGui extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(18, Short.MAX_VALUE)));
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
         jTabbedPane1.addTab("Vending Machine", jPanel2);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 400, Short.MAX_VALUE));
-        jPanel3Layout.setVerticalGroup(
-                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 412, Short.MAX_VALUE));
+        jPanel3.setLayout(new java.awt.CardLayout());
+
+        buttonGroup1.add(restockSlotButton);
+        restockSlotButton.setText("Restock Slot");
+
+        buttonGroup1.add(restockAllSlotsButton);
+        restockAllSlotsButton.setText("Restock All Slots");
+
+        buttonGroup1.add(editProductPriceButton);
+        editProductPriceButton.setText("Edit Product Price");
+
+        buttonGroup1.add(restockCurrencyButton);
+        restockCurrencyButton.setText("Restock Currency");
+
+        buttonGroup1.add(restockAllCurrencyButton);
+        restockAllCurrencyButton.setText("Restock All Currency");
+
+        buttonGroup1.add(collectCurrencyButton);
+        collectCurrencyButton.setText("Collect Currency");
+
+        buttonGroup1.add(collectAllCurrencyButton);
+        collectAllCurrencyButton.setText("Collect All Currency");
+
+        buttonGroup1.add(displayTransactionsButton);
+        displayTransactionsButton.setText("Display Transactions");
+
+        buttonGroup1.add(displaySalesReportButton);
+        displaySalesReportButton.setText("Display Sales Report");
+
+        jLabel3.setText("Maintenance Functions");
+
+        mainMenuButton.setText("Return to Main Menu");
+        mainMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mainMenuButtonActionPerformed(evt);
+            }
+        });
+
+        confirmMaintenanceButton.setText("Confirm Selection");
+        confirmMaintenanceButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmMaintenanceButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+                jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(restockSlotButton, javax.swing.GroupLayout.Alignment.LEADING,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout
+                                                .createSequentialGroup()
+                                                .addGroup(jPanel7Layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(restockAllSlotsButton,
+                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(restockCurrencyButton,
+                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(editProductPriceButton,
+                                                                javax.swing.GroupLayout.Alignment.LEADING))
+                                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(156, 156, 156)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel7Layout.createSequentialGroup()
+                                                .addComponent(displayTransactionsButton)
+                                                .addGap(15, 15, 15))
+                                        .addGroup(
+                                                jPanel7Layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel7Layout.createSequentialGroup()
+                                                                .addGroup(jPanel7Layout.createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(collectAllCurrencyButton)
+                                                                        .addComponent(collectCurrencyButton))
+                                                                .addGap(0, 0, Short.MAX_VALUE))
+                                                        .addComponent(restockAllCurrencyButton,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                Short.MAX_VALUE))))
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel7Layout.createSequentialGroup()
+                                                .addGap(149, 149, 149)
+                                                .addComponent(jLabel3))
+                                        .addGroup(jPanel7Layout.createSequentialGroup()
+                                                .addGap(133, 133, 133)
+                                                .addComponent(displaySalesReportButton))
+                                        .addGroup(jPanel7Layout.createSequentialGroup()
+                                                .addGap(155, 155, 155)
+                                                .addComponent(confirmMaintenanceButton))
+                                        .addGroup(jPanel7Layout.createSequentialGroup()
+                                                .addGap(144, 144, 144)
+                                                .addComponent(mainMenuButton)))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+        jPanel7Layout.setVerticalGroup(
+                jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addComponent(jLabel3)
+                                .addGap(42, 42, 42)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(restockSlotButton, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(restockAllCurrencyButton, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(restockAllSlotsButton)
+                                        .addComponent(collectCurrencyButton))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(editProductPriceButton)
+                                        .addComponent(collectAllCurrencyButton))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(restockCurrencyButton)
+                                        .addComponent(displayTransactionsButton))
+                                .addGap(18, 18, 18)
+                                .addComponent(displaySalesReportButton)
+                                .addGap(24, 24, 24)
+                                .addComponent(confirmMaintenanceButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mainMenuButton)
+                                .addGap(41, 41, 41)));
+
+        jPanel3.add(jPanel7, "card2");
+
+        jPanel8.setLayout(new java.awt.GridLayout(8, 2));
+
+        jLabel6.setText("Enter new product stock: ");
+
+        jLabel4.setText("Restock Product");
+
+        jLabel5.setText("Choose a product to restock:");
+
+        restockInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restockInputActionPerformed(evt);
+            }
+        });
+
+        returnToMaintenanceButton.setText("Return");
+        returnToMaintenanceButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnToMaintenanceButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout restockSlotPanelLayout = new javax.swing.GroupLayout(restockSlotPanel);
+        restockSlotPanel.setLayout(restockSlotPanelLayout);
+        restockSlotPanelLayout.setHorizontalGroup(
+                restockSlotPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(restockSlotPanelLayout.createSequentialGroup()
+                                .addGroup(restockSlotPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(restockSlotPanelLayout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(jLabel5)
+                                                .addGap(0, 252, Short.MAX_VALUE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                                restockSlotPanelLayout.createSequentialGroup()
+                                                        .addGap(0, 0, Short.MAX_VALUE)
+                                                        .addComponent(returnToMaintenanceButton)))
+                                .addContainerGap())
+                        .addGroup(restockSlotPanelLayout.createSequentialGroup()
+                                .addGroup(restockSlotPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(restockSlotPanelLayout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(jLabel6)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(restockInput, javax.swing.GroupLayout.PREFERRED_SIZE, 71,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(restockSlotPanelLayout.createSequentialGroup()
+                                                .addGap(159, 159, 159)
+                                                .addComponent(jLabel4)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(restockSlotPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(restockSlotPanelLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addContainerGap())));
+        restockSlotPanelLayout.setVerticalGroup(
+                restockSlotPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                restockSlotPanelLayout.createSequentialGroup()
+                                        .addGap(11, 11, 11)
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285,
+                                                Short.MAX_VALUE)
+                                        .addGroup(restockSlotPanelLayout
+                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jLabel6)
+                                                .addComponent(restockInput, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(9, 9, 9)
+                                        .addComponent(returnToMaintenanceButton)
+                                        .addContainerGap())
+                        .addGroup(restockSlotPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(restockSlotPanelLayout.createSequentialGroup()
+                                        .addGap(80, 80, 80)
+                                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 252,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))));
+
+        jPanel3.add(restockSlotPanel, "card3");
+
+        jLabel9.setText("Enter stock to be added: ");
+
+        jLabel10.setText("Restock All Slots");
+
+        restockAllInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restockAllInputActionPerformed(evt);
+            }
+        });
+
+        returnToMaintenanceButton2.setText("Return");
+        returnToMaintenanceButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnToMaintenanceButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout restockAllSlotPanelLayout = new javax.swing.GroupLayout(restockAllSlotPanel);
+        restockAllSlotPanel.setLayout(restockAllSlotPanelLayout);
+        restockAllSlotPanelLayout.setHorizontalGroup(
+                restockAllSlotPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                restockAllSlotPanelLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(returnToMaintenanceButton2)
+                                        .addContainerGap())
+                        .addGroup(restockAllSlotPanelLayout.createSequentialGroup()
+                                .addGroup(restockAllSlotPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(restockAllSlotPanelLayout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(jLabel9)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(restockAllInput, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(restockAllSlotPanelLayout.createSequentialGroup()
+                                                .addGap(160, 160, 160)
+                                                .addComponent(jLabel10)))
+                                .addGap(0, 170, Short.MAX_VALUE)));
+        restockAllSlotPanelLayout.setVerticalGroup(
+                restockAllSlotPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                restockAllSlotPanelLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 318,
+                                                Short.MAX_VALUE)
+                                        .addGroup(restockAllSlotPanelLayout
+                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jLabel9)
+                                                .addComponent(restockAllInput, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(9, 9, 9)
+                                        .addComponent(returnToMaintenanceButton2)
+                                        .addContainerGap()));
+
+        jPanel3.add(restockAllSlotPanel, "card3");
+
+        jLabel14.setText("Enter new product price: ");
+
+        jLabel15.setText("Edit Product Price");
+
+        jLabel16.setText("Choose a product to edit its price:");
+
+        editPriceInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editPriceInputActionPerformed(evt);
+            }
+        });
+
+        returnToMaintenanceButton3.setText("Return");
+        returnToMaintenanceButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnToMaintenanceButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout editPricePanelLayout = new javax.swing.GroupLayout(editPricePanel);
+        editPricePanel.setLayout(editPricePanelLayout);
+        editPricePanelLayout.setHorizontalGroup(
+                editPricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(editPricePanelLayout.createSequentialGroup()
+                                .addGroup(editPricePanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(editPricePanelLayout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(jLabel16)
+                                                .addGap(0, 226, Short.MAX_VALUE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                                editPricePanelLayout.createSequentialGroup()
+                                                        .addGap(0, 0, Short.MAX_VALUE)
+                                                        .addComponent(returnToMaintenanceButton3)))
+                                .addContainerGap())
+                        .addGroup(editPricePanelLayout.createSequentialGroup()
+                                .addGroup(editPricePanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(editPricePanelLayout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(jLabel14)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(editPriceInput, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(editPricePanelLayout.createSequentialGroup()
+                                                .addGap(159, 159, 159)
+                                                .addComponent(jLabel15)))
+                                .addGap(0, 0, Short.MAX_VALUE)));
+        editPricePanelLayout.setVerticalGroup(
+                editPricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                editPricePanelLayout.createSequentialGroup()
+                                        .addGap(11, 11, 11)
+                                        .addComponent(jLabel15)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285,
+                                                Short.MAX_VALUE)
+                                        .addGroup(editPricePanelLayout
+                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jLabel14)
+                                                .addComponent(editPriceInput, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(9, 9, 9)
+                                        .addComponent(returnToMaintenanceButton3)
+                                        .addContainerGap()));
+
+        jPanel3.add(editPricePanel, "card3");
+
+        jLabel17.setText("Enter currency stock to be added: ");
+
+        jLabel18.setText("Restock Currency");
+
+        jLabel19.setText("Choose a quantity to add stock:");
+
+        restockCurrencyInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restockCurrencyInputActionPerformed(evt);
+            }
+        });
+
+        returnToMaintenanceButton4.setText("Return");
+        returnToMaintenanceButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnToMaintenanceButton4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout restockCurrencyPanelLayout = new javax.swing.GroupLayout(restockCurrencyPanel);
+        restockCurrencyPanel.setLayout(restockCurrencyPanelLayout);
+        restockCurrencyPanelLayout.setHorizontalGroup(
+                restockCurrencyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(restockCurrencyPanelLayout.createSequentialGroup()
+                                .addGroup(restockCurrencyPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(restockCurrencyPanelLayout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(jLabel19)
+                                                .addGap(0, 236, Short.MAX_VALUE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                                restockCurrencyPanelLayout.createSequentialGroup()
+                                                        .addGap(0, 0, Short.MAX_VALUE)
+                                                        .addComponent(returnToMaintenanceButton4)))
+                                .addContainerGap())
+                        .addGroup(restockCurrencyPanelLayout.createSequentialGroup()
+                                .addGroup(restockCurrencyPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(restockCurrencyPanelLayout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(jLabel17)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(restockCurrencyInput,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 71,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(restockCurrencyPanelLayout.createSequentialGroup()
+                                                .addGap(159, 159, 159)
+                                                .addComponent(jLabel18)))
+                                .addGap(0, 0, Short.MAX_VALUE)));
+        restockCurrencyPanelLayout.setVerticalGroup(
+                restockCurrencyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, restockCurrencyPanelLayout
+                                .createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285,
+                                        Short.MAX_VALUE)
+                                .addGroup(restockCurrencyPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel17)
+                                        .addComponent(restockCurrencyInput, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(9, 9, 9)
+                                .addComponent(returnToMaintenanceButton4)
+                                .addContainerGap()));
+
+        jPanel3.add(restockCurrencyPanel, "card3");
+
+        jLabel11.setText("Enter currency stock to be added: ");
+
+        jLabel12.setText("Restock All Currency");
+
+        restockAllCurrencyInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restockAllCurrencyInputActionPerformed(evt);
+            }
+        });
+
+        returnToMaintenanceButton5.setText("Return");
+        returnToMaintenanceButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnToMaintenanceButton5ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout restockAllCurrencyPanelLayout = new javax.swing.GroupLayout(restockAllCurrencyPanel);
+        restockAllCurrencyPanel.setLayout(restockAllCurrencyPanelLayout);
+        restockAllCurrencyPanelLayout.setHorizontalGroup(
+                restockAllCurrencyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                restockAllCurrencyPanelLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(returnToMaintenanceButton5)
+                                        .addContainerGap())
+                        .addGroup(restockAllCurrencyPanelLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(restockAllCurrencyPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel12)
+                                        .addGroup(restockAllCurrencyPanelLayout.createSequentialGroup()
+                                                .addComponent(jLabel11)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(restockAllCurrencyInput,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 71,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 148, Short.MAX_VALUE)));
+        restockAllCurrencyPanelLayout.setVerticalGroup(
+                restockAllCurrencyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, restockAllCurrencyPanelLayout
+                                .createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 318,
+                                        Short.MAX_VALUE)
+                                .addGroup(restockAllCurrencyPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel11)
+                                        .addComponent(restockAllCurrencyInput, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(9, 9, 9)
+                                .addComponent(returnToMaintenanceButton5)
+                                .addContainerGap()));
+
+        jPanel3.add(restockAllCurrencyPanel, "card3");
+
+        jLabel20.setText("Enter currency stock to be collected: ");
+
+        jLabel21.setText("Collect Currency");
+
+        jLabel22.setText("Choose a quantity to collect stock:");
+
+        collectCurrencyInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                collectCurrencyInputActionPerformed(evt);
+            }
+        });
+
+        returnToMaintenanceButton6.setText("Return");
+        returnToMaintenanceButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnToMaintenanceButton6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout collectCurrencyPanelLayout = new javax.swing.GroupLayout(collectCurrencyPanel);
+        collectCurrencyPanel.setLayout(collectCurrencyPanelLayout);
+        collectCurrencyPanelLayout.setHorizontalGroup(
+                collectCurrencyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(collectCurrencyPanelLayout.createSequentialGroup()
+                                .addGroup(collectCurrencyPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(collectCurrencyPanelLayout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(jLabel22)
+                                                .addGap(0, 224, Short.MAX_VALUE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                                collectCurrencyPanelLayout.createSequentialGroup()
+                                                        .addGap(0, 0, Short.MAX_VALUE)
+                                                        .addComponent(returnToMaintenanceButton6)))
+                                .addContainerGap())
+                        .addGroup(collectCurrencyPanelLayout.createSequentialGroup()
+                                .addGroup(collectCurrencyPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(collectCurrencyPanelLayout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(jLabel20)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(collectCurrencyInput,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 71,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(collectCurrencyPanelLayout.createSequentialGroup()
+                                                .addGap(159, 159, 159)
+                                                .addComponent(jLabel21)))
+                                .addGap(0, 0, Short.MAX_VALUE)));
+        collectCurrencyPanelLayout.setVerticalGroup(
+                collectCurrencyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, collectCurrencyPanelLayout
+                                .createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel21)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285,
+                                        Short.MAX_VALUE)
+                                .addGroup(collectCurrencyPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel20)
+                                        .addComponent(collectCurrencyInput, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(9, 9, 9)
+                                .addComponent(returnToMaintenanceButton6)
+                                .addContainerGap()));
+
+        jPanel3.add(collectCurrencyPanel, "card3");
+
+        jLabel13.setText("Enter currency stock to be collected: ");
+
+        jLabel23.setText("Collect All Currency");
+
+        collectAllCurrencyInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                collectAllCurrencyInputActionPerformed(evt);
+            }
+        });
+
+        returnToMaintenanceButton7.setText("Return");
+        returnToMaintenanceButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnToMaintenanceButton7ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout collectAllCurrencyPanelLayout = new javax.swing.GroupLayout(collectAllCurrencyPanel);
+        collectAllCurrencyPanel.setLayout(collectAllCurrencyPanelLayout);
+        collectAllCurrencyPanelLayout.setHorizontalGroup(
+                collectAllCurrencyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                collectAllCurrencyPanelLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(returnToMaintenanceButton7)
+                                        .addContainerGap())
+                        .addGroup(collectAllCurrencyPanelLayout.createSequentialGroup()
+                                .addGroup(collectAllCurrencyPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(collectAllCurrencyPanelLayout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(jLabel13)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(collectAllCurrencyInput,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 71,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(collectAllCurrencyPanelLayout.createSequentialGroup()
+                                                .addGap(147, 147, 147)
+                                                .addComponent(jLabel23)))
+                                .addGap(0, 135, Short.MAX_VALUE)));
+        collectAllCurrencyPanelLayout.setVerticalGroup(
+                collectAllCurrencyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, collectAllCurrencyPanelLayout
+                                .createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel23)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 318,
+                                        Short.MAX_VALUE)
+                                .addGroup(collectAllCurrencyPanelLayout
+                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel13)
+                                        .addComponent(collectAllCurrencyInput, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(9, 9, 9)
+                                .addComponent(returnToMaintenanceButton7)
+                                .addContainerGap()));
+
+        jPanel3.add(collectAllCurrencyPanel, "card3");
+
+        jPanel9.setLayout(new java.awt.GridLayout());
+
+        jLabel25.setText("Display Transactions");
+
+        returnToMaintenanceButton8.setText("Return");
+        returnToMaintenanceButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnToMaintenanceButton8ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout displayTransactionsPanelLayout = new javax.swing.GroupLayout(displayTransactionsPanel);
+        displayTransactionsPanel.setLayout(displayTransactionsPanelLayout);
+        displayTransactionsPanelLayout.setHorizontalGroup(
+                displayTransactionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(displayTransactionsPanelLayout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(jLabel25)
+                                .addGap(0, 160, Short.MAX_VALUE))
+                        .addGroup(displayTransactionsPanelLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(returnToMaintenanceButton8)
+                                .addContainerGap())
+                        .addGroup(displayTransactionsPanelLayout
+                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(displayTransactionsPanelLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addContainerGap())));
+        displayTransactionsPanelLayout.setVerticalGroup(
+                displayTransactionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                displayTransactionsPanelLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jLabel25)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 349,
+                                                Short.MAX_VALUE)
+                                        .addComponent(returnToMaintenanceButton8)
+                                        .addContainerGap())
+                        .addGroup(displayTransactionsPanelLayout
+                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(displayTransactionsPanelLayout.createSequentialGroup()
+                                        .addGap(74, 74, 74)
+                                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 252,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap(74, Short.MAX_VALUE))));
+
+        jPanel3.add(displayTransactionsPanel, "card3");
+
+        jLabel26.setText("Display Sales Report");
+
+        returnToMaintenanceButton9.setText("Return");
+        returnToMaintenanceButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                returnToMaintenanceButton9ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout displaySalesReportPanelLayout = new javax.swing.GroupLayout(displaySalesReportPanel);
+        displaySalesReportPanel.setLayout(displaySalesReportPanelLayout);
+        displaySalesReportPanelLayout.setHorizontalGroup(
+                displaySalesReportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(displaySalesReportPanelLayout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(jLabel26)
+                                .addGap(0, 159, Short.MAX_VALUE))
+                        .addGroup(displaySalesReportPanelLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(returnToMaintenanceButton9)
+                                .addContainerGap()));
+        displaySalesReportPanelLayout.setVerticalGroup(
+                displaySalesReportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                displaySalesReportPanelLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jLabel26)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 349,
+                                                Short.MAX_VALUE)
+                                        .addComponent(returnToMaintenanceButton9)
+                                        .addContainerGap()));
+
+        jPanel3.add(displaySalesReportPanel, "card3");
 
         jTabbedPane1.addTab(" Maintenance", jPanel3);
 
@@ -223,7 +1006,342 @@ public class MainGui extends javax.swing.JFrame {
                         .addComponent(jTabbedPane1));
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// END OF AUTO-GENERATED CODE AND COMMENTS FROM NETBEANS
+
+    private void mainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        jTabbedPane1.setSelectedIndex(0);
+    }
+
+    private void anotherPurchaseButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        String selectedProduct = buttonGroup.getSelection().getActionCommand();
+        JOptionPane.showMessageDialog(this, "Selected Product: " + selectedProduct);
+        int totalPayment = change;
+
+        performPurchase(selectedProduct, totalPayment);
+    }
+
+    private void dispenseChangeButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        String changeString = machine.dispenseChange(change);
+
+        machine.updateCurrencyStockWithChange(machine.calculateChangeQuantity(change));
+
+        jOptionPane1.setMessage("Change is [200-100-50-20-10-5-1]: " + changeString + " = PHP" + change);
+        jOptionPane1.createDialog(this, "Payment").setVisible(true);
+        jTabbedPane1.setSelectedIndex(0);
+
+    }
+
+    private void transactionCancelButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        machine.updateCurrencyStockWithChange(machine.calculateChangeQuantity(userPayment));
+        jTabbedPane1.setSelectedIndex(0);
+    }
+
+    private void confirmPurchaseButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        String selectedProduct = buttonGroup.getSelection().getActionCommand();
+        JOptionPane.showMessageDialog(this, "Selected Product: " + selectedProduct);
+        int totalPayment = userPayment;
+
+        performPurchase(selectedProduct, totalPayment);
+    }
+
+    private void confirmMaintenanceButtonActionPerformed(java.awt.event.ActionEvent evt) {
+
+        JPanel maintenancePanel = null;
+        JPanel productPanel = productMaintenance();
+        JTextField textField = new JTextField();
+
+        if (restockSlotButton.isSelected()) {
+
+            maintenancePanel = restockSlotPanel;
+            jPanel3.add(restockSlotPanel, "restockSlotPanel");
+            restockSlotPanel.add(productPanel);
+            restockSlotPanel.add(textField);
+
+        } else if (restockAllSlotsButton.isSelected()) {
+
+            maintenancePanel = restockAllSlotPanel;
+            jPanel3.add(restockAllSlotPanel, "restockAllSlotsPanel");
+            restockAllSlotPanel.add(printProductMaintenance());
+            restockSlotPanel.add(textField);
+
+        } else if (editProductPriceButton.isSelected()) {
+            maintenancePanel = editPricePanel;
+            jPanel3.add(editPricePanel, "editPricePanel");
+            editPricePanel.add(productPanel);
+            editPricePanel.add(textField);
+
+        } else if (restockCurrencyButton.isSelected()) {
+            maintenancePanel = restockCurrencyPanel;
+            jPanel3.add(restockCurrencyPanel, "restockCurrencyPanel");
+            restockCurrencyPanel.add(buttonCurrencyStock());
+            restockCurrencyPanel.add(textField);
+
+        } else if (restockAllCurrencyButton.isSelected()) {
+            maintenancePanel = restockAllCurrencyPanel;
+            jPanel3.add(restockAllCurrencyPanel, "restockAllCurrencyPanel");
+            restockAllCurrencyPanel.add(printCurrencyStock());
+            restockAllCurrencyPanel.add(textField);
+
+        } else if (collectCurrencyButton.isSelected()) {
+            maintenancePanel = collectCurrencyPanel;
+            jPanel3.add(collectCurrencyPanel, "collectCurrencyPanel");
+            collectCurrencyPanel.add(buttonCurrencyStock());
+            collectCurrencyPanel.add(textField);
+
+        } else if (collectAllCurrencyButton.isSelected()) {
+            maintenancePanel = collectAllCurrencyPanel;
+            jPanel3.add(collectAllCurrencyPanel, "collectAllCurrencyPanel");
+            collectAllCurrencyPanel.add(printCurrencyStock());
+            collectAllCurrencyPanel.add(textField);
+
+        } else if (displayTransactionsButton.isSelected()) {
+            maintenancePanel = displayTransactionsPanel;
+            jPanel3.add(displayTransactionsPanel, "displayTransactionsPanel");
+            displayTransactionsPanel.add(printTransactions());
+            displayTransactionsPanel.add(textField);
+
+        } else if (displaySalesReportButton.isSelected()) {
+            maintenancePanel = displaySalesReportPanel;
+            jPanel3.add(displaySalesReportPanel, "displaySalesReportPanel");
+            displaySalesReportPanel.add(printSalesReport());
+            displaySalesReportPanel.add(textField);
+        }
+
+        jPanel3.removeAll();
+        jPanel3.add(maintenancePanel);
+        jPanel3.revalidate();
+        jPanel3.repaint();
+
+    }
+
+    private void restockInputActionPerformed(java.awt.event.ActionEvent evt) {
+        String userInput = restockInput.getText();
+        String selectedProduct = buttonGroup.getSelection().getActionCommand();
+        int slotIndex = -1;
+
+        for (int i = 0; i < machine.getSlotList().size(); i++) {
+            Slot slot = machine.getSlotList().get(i);
+            if (slot.getProduct().getName().equals(selectedProduct)) {
+                slotIndex = i;
+                break;
+            }
+        }
+
+        try {
+            int stock = Integer.parseInt(userInput);
+
+            if (machine.validRestock(stock)) {
+                machine.restockSlot(slotIndex, stock);
+                machine.clearTransactionList();
+                productMaintenance();
+
+            } else {
+
+                JOptionPane.showMessageDialog(this, "Invalid stock. Please enter a valid quantity.", "Invalid Stock",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (NumberFormatException e) {
+
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter an integer.", "Invalid Stock",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
+
+    private void restockAllInputActionPerformed(java.awt.event.ActionEvent evt) {
+        String userInput = restockAllInput.getText();
+        try {
+            int stock = Integer.parseInt(userInput);
+
+            if (machine.validRestockAll(stock)) {
+                machine.restockAllSlots(stock);
+                machine.clearTransactionList();
+                printProductMaintenance();
+
+            } else {
+
+                JOptionPane.showMessageDialog(this, "Invalid stock. Please enter a valid quantity.", "Invalid Stock",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter an integer.", "Invalid Stock",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void returnToMaintenanceButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+        jPanel3.remove(restockAllSlotPanel);
+        jPanel3.add(jPanel7);
+    }
+
+    private void returnToMaintenanceButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        jPanel3.remove(restockSlotPanel);
+        jPanel3.add(jPanel7);
+    }
+
+    private void editPriceInputActionPerformed(java.awt.event.ActionEvent evt) {
+        String userInput = editPriceInput.getText();
+        String selectedProduct = buttonGroup.getSelection().getActionCommand();
+        int slotIndex = -1;
+
+        for (int i = 0; i < machine.getSlotList().size(); i++) {
+            Slot slot = machine.getSlotList().get(i);
+            if (slot.getProduct().getName().equals(selectedProduct)) {
+                slotIndex = i;
+                break;
+            }
+        }
+
+        try {
+            int newPrice = Integer.parseInt(userInput);
+
+            if (newPrice >= 0) {
+                machine.editPrice(slotIndex, newPrice);
+                productMaintenance();
+            }
+
+            else {
+                JOptionPane.showMessageDialog(this, "Invalid price. Please enter a valid quantity.", "Invalid Price",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter an integer.", "Invalid Stock",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void returnToMaintenanceButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+        jPanel3.remove(editPricePanel);
+        jPanel3.add(jPanel7);
+    }
+
+    private void restockCurrencyInputActionPerformed(java.awt.event.ActionEvent evt) {
+        String userInput = restockCurrencyInput.getText();
+        String stringValue = buttonGroup.getSelection().getActionCommand();
+
+        try {
+            int stock = Integer.parseInt(userInput);
+            int currencyValue = Integer.parseInt(stringValue);
+
+            if (machine.isValidCurrencyValue(currencyValue)) {
+                machine.restockCurrency(currencyValue, stock);
+
+                buttonCurrencyStock();
+            }
+
+            else {
+                JOptionPane.showMessageDialog(this, "Invalid input. Please enter a valid quantity.", "Invalid Price",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter an integer.", "Invalid Stock",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void returnToMaintenanceButton4ActionPerformed(java.awt.event.ActionEvent evt) {
+        jPanel3.remove(restockCurrencyPanel);
+        jPanel3.add(jPanel7);
+    }
+
+    private void restockAllCurrencyInputActionPerformed(java.awt.event.ActionEvent evt) {
+        String userInput = restockAllCurrencyInput.getText();
+
+        try {
+            int stock = Integer.parseInt(userInput);
+
+            if (stock >= 0) {
+                machine.restockAllCurrency(stock);
+                printCurrencyStock();
+            }
+
+            else {
+                JOptionPane.showMessageDialog(this, "Invalid input. Please enter a valid quantity.", "Invalid Price",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (NumberFormatException e) {
+
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter an integer.", "Invalid Stock",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void returnToMaintenanceButton5ActionPerformed(java.awt.event.ActionEvent evt) {
+        jPanel3.remove(restockAllCurrencyPanel);
+        jPanel3.add(jPanel7);
+    }
+
+    private void collectCurrencyInputActionPerformed(java.awt.event.ActionEvent evt) {
+        String userInput = collectCurrencyInput.getText();
+        String stringValue = buttonGroup.getSelection().getActionCommand();
+
+        try {
+            int stock = Integer.parseInt(userInput);
+            int currencyValue = Integer.parseInt(stringValue);
+
+            if (stock >= 0) {
+                machine.collectCurrency(currencyValue, stock);
+
+                buttonCurrencyStock();
+            }
+
+            else {
+                JOptionPane.showMessageDialog(this, "Invalid input. Please enter a valid quantity.", "Invalid Stock",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (NumberFormatException e) {
+
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter an integer.", "Invalid Stock",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void returnToMaintenanceButton6ActionPerformed(java.awt.event.ActionEvent evt) {
+        jPanel3.remove(collectCurrencyPanel);
+        jPanel3.add(jPanel7);
+    }
+
+    private void collectAllCurrencyInputActionPerformed(java.awt.event.ActionEvent evt) {
+        String userInput = collectAllCurrencyInput.getText();
+
+        try {
+            int stock = Integer.parseInt(userInput);
+
+            if (stock >= 0) {
+                machine.collectAllCurrency(stock);
+                printCurrencyStock();
+            }
+
+            else {
+                JOptionPane.showMessageDialog(this, "Invalid input. Please enter a valid quantity.", "Invalid Stock",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (NumberFormatException e) {
+
+            JOptionPane.showMessageDialog(this, "Invalid input. Please enter an integer.", "Invalid Stock",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void returnToMaintenanceButton7ActionPerformed(java.awt.event.ActionEvent evt) {
+        jPanel3.remove(collectAllCurrencyPanel);
+        jPanel3.add(jPanel7);
+    }
+
+    private void returnToMaintenanceButton8ActionPerformed(java.awt.event.ActionEvent evt) {
+        jPanel3.remove(displayTransactionsPanel);
+        jPanel3.add(jPanel7);
+    }
+
+    private void returnToMaintenanceButton9ActionPerformed(java.awt.event.ActionEvent evt) {
+        jPanel3.remove(displaySalesReportPanel);
+        jPanel3.add(jPanel7);
+    }
 
     private void maintenanceOptionActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_maintenanceOptionActionPerformed
         jTabbedPane1.setSelectedIndex(2);
@@ -238,38 +1356,6 @@ public class MainGui extends javax.swing.JFrame {
         getUserPayment();
 
     }// GEN-LAST:event_purchaseOptionActionPerformed
-
-    private void confirmPurchaseButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_confirmPurchaseButtonActionPerformed
-        String selectedProduct = buttonGroup.getSelection().getActionCommand();
-        JOptionPane.showMessageDialog(this, "Selected Product: " + selectedProduct);
-        int totalPayment = userPayment;
-
-        performPurchase(selectedProduct, totalPayment);
-    }// GEN-LAST:event_confirmPurchaseButtonActionPerformed
-
-    private void transactionCancelButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_transactionCancelButtonActionPerformed
-        machine.updateCurrencyStockWithChange(machine.calculateChangeQuantity(userPayment));
-        jTabbedPane1.setSelectedIndex(0);
-    }// GEN-LAST:event_transactionCancelButtonActionPerformed
-
-    private void anotherPurchaseButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_anotherPurchaseButtonActionPerformed
-        String selectedProduct = buttonGroup.getSelection().getActionCommand();
-        JOptionPane.showMessageDialog(this, "Selected Product: " + selectedProduct);
-        int totalPayment = change;
-
-        performPurchase(selectedProduct, totalPayment);
-    }// GEN-LAST:event_anotherPurchaseButtonActionPerformed
-
-    private void dispenseChangeButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cancelTransactionButton1ActionPerformed
-        String changeString = machine.dispenseChange(change);
-
-        machine.updateCurrencyStockWithChange(machine.calculateChangeQuantity(change));
-
-        jOptionPane1.setMessage("Change is [200-100-50-20-10-5-1]: " + changeString + " = PHP" + change);
-        jOptionPane1.createDialog(this, "Payment").setVisible(true);
-        jTabbedPane1.setSelectedIndex(0);
-
-    }
 
     private void getUserPayment() {
         String input = JOptionPane.showInputDialog(this,
@@ -315,6 +1401,100 @@ public class MainGui extends javax.swing.JFrame {
         }
     }
 
+    private JPanel productMaintenance() {
+        jPanel8.removeAll();
+
+        ArrayList<Slot> slotList = machine.getSlotList();
+        buttonGroup = new ButtonGroup();
+
+        for (Slot slot : slotList) {
+            JRadioButton radioButton = new JRadioButton(slot.getProduct().getName());
+            radioButton.setActionCommand(slot.getProduct().getName());
+            buttonGroup.add(radioButton);
+
+            JLabel stockLabel = new JLabel("Stock: " + slot.getStock());
+            JLabel priceLabel = new JLabel("Price: PHP " + slot.getProduct().getPrice());
+            JLabel caloriesLabel = new JLabel("Calories: " + slot.getProduct().getCalories());
+
+            jPanel8.add(radioButton);
+            jPanel8.add(stockLabel);
+            jPanel8.add(priceLabel);
+            jPanel8.add(caloriesLabel);
+        }
+
+        jPanel8.revalidate();
+        jPanel8.repaint();
+        return jPanel8;
+
+    }
+
+    private JPanel buttonCurrencyStock() {
+        jPanel8.removeAll();
+
+        ArrayList<Currency> currencyStock = machine.getCurrencyStock();
+        buttonGroup = new ButtonGroup();
+
+        for (Currency currency : currencyStock) {
+            JRadioButton radioButton = new JRadioButton("Value: PHP" + String.valueOf(currency.getValue()));
+            radioButton.setActionCommand(String.valueOf(currency.getValue()));
+            buttonGroup.add(radioButton);
+
+            JLabel quantity = new JLabel("Quantity: " + currency.getQuantity());
+
+            jPanel8.add(radioButton);
+            jPanel8.add(quantity);
+        }
+
+        jPanel8.revalidate();
+        jPanel8.repaint();
+
+        return jPanel8;
+    }
+
+    private JPanel printCurrencyStock() {
+        jPanel8.removeAll();
+
+        ArrayList<Currency> currencyStock = machine.getCurrencyStock();
+
+        for (Currency currency : currencyStock) {
+
+            JLabel value = new JLabel("PHP " + currency.getValue());
+            JLabel quantity = new JLabel("Quantity: " + currency.getQuantity());
+
+            jPanel8.add(value);
+            jPanel8.add(quantity);
+        }
+
+        jPanel8.revalidate();
+        jPanel8.repaint();
+
+        return jPanel8;
+    }
+
+    private JPanel printProductMaintenance() {
+        jPanel8.removeAll();
+
+        ArrayList<Slot> slotList = machine.getSlotList();
+
+        for (Slot slot : slotList) {
+            JLabel label = new JLabel(slot.getProduct().getName());
+
+            JLabel stockLabel = new JLabel("Stock: " + slot.getStock());
+            JLabel priceLabel = new JLabel("Price: PHP " + slot.getProduct().getPrice());
+            JLabel caloriesLabel = new JLabel("Calories: " + slot.getProduct().getCalories());
+
+            jPanel8.add(label);
+            jPanel8.add(stockLabel);
+            jPanel8.add(priceLabel);
+            jPanel8.add(caloriesLabel);
+        }
+
+        jPanel8.revalidate();
+        jPanel8.repaint();
+        return jPanel8;
+
+    }
+
     private void generateProductButtons() {
         ArrayList<Slot> slotList = machine.getSlotList();
         buttonGroup = new ButtonGroup();
@@ -339,6 +1519,59 @@ public class MainGui extends javax.swing.JFrame {
         jPanel4.revalidate();
         jPanel4.repaint();
         jPanel4.setVisible(true);
+    }
+
+    private JPanel printTransactions() {
+        jPanel9.removeAll();
+
+        ArrayList<Transaction> transactionList = machine.getTransactions();
+        int cols = 3;
+        int rows = transactionList.size();
+        jPanel9.setLayout(new GridLayout(rows, cols));
+
+        for (Transaction transaction : transactionList) {
+
+            JLabel payment = new JLabel("Payment: " + transaction.getPayment());
+            JLabel productName = new JLabel("Name: " + transaction.getProduct().getName());
+            JLabel change = new JLabel("Change: " + transaction.getChange());
+
+            jPanel9.add(productName);
+            jPanel9.add(payment);
+            jPanel9.add(change);
+        }
+
+        jPanel9.revalidate();
+        jPanel9.repaint();
+        return jPanel9;
+
+    }
+
+    private JPanel printSalesReport() {
+        jPanel9.removeAll();
+
+        ArrayList<String> salesReportArray = machine.salesReport();
+        int rows = salesReportArray.size();
+        jPanel9.setLayout(new GridLayout(rows, 1));
+
+        for (String report : salesReportArray) {
+            JLabel salesReport = new JLabel(report);
+            jPanel9.add(salesReport);
+        }
+
+        JPanel totalSalesPanel = new JPanel();
+        totalSalesPanel.setLayout(new BorderLayout());
+
+        JLabel totalSales = new JLabel("Total Sales: P" + machine.calculateTotalSales());
+        totalSales.setHorizontalAlignment(JLabel.CENTER);
+
+        totalSalesPanel.add(totalSales, BorderLayout.SOUTH);
+
+        jPanel9.add(totalSalesPanel);
+
+        jPanel9.revalidate();
+        jPanel9.repaint();
+
+        return jPanel9;
     }
 
     /**
@@ -383,13 +1616,52 @@ public class MainGui extends javax.swing.JFrame {
     private int userPayment;
     private int change;
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify
     private javax.swing.JButton anotherPurchaseButton;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JRadioButton collectAllCurrencyButton;
+    private javax.swing.JTextField collectAllCurrencyInput;
+    private javax.swing.JPanel collectAllCurrencyPanel;
+    private javax.swing.JRadioButton collectCurrencyButton;
+    private javax.swing.JTextField collectCurrencyInput;
+    private javax.swing.JPanel collectCurrencyPanel;
+    private javax.swing.JButton confirmMaintenanceButton;
     private javax.swing.JButton confirmPurchaseButton;
     private javax.swing.JButton dispenseChangeButton;
+    private javax.swing.JRadioButton displaySalesReportButton;
+    private javax.swing.JPanel displaySalesReportPanel;
+    private javax.swing.JRadioButton displayTransactionsButton;
+    private javax.swing.JPanel displayTransactionsPanel;
+    private javax.swing.JTextField editPriceInput;
+    private javax.swing.JPanel editPricePanel;
+    private javax.swing.JRadioButton editProductPriceButton;
     private javax.swing.JButton exitOption;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JOptionPane jOptionPane2;
     private javax.swing.JPanel jPanel1;
@@ -398,9 +1670,34 @@ public class MainGui extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton mainMenuButton;
     private javax.swing.JButton maintenanceOption;
     private javax.swing.JButton purchaseOption;
+    private javax.swing.JRadioButton restockAllCurrencyButton;
+    private javax.swing.JTextField restockAllCurrencyInput;
+    private javax.swing.JPanel restockAllCurrencyPanel;
+    private javax.swing.JTextField restockAllInput;
+    private javax.swing.JPanel restockAllSlotPanel;
+    private javax.swing.JRadioButton restockAllSlotsButton;
+    private javax.swing.JRadioButton restockCurrencyButton;
+    private javax.swing.JTextField restockCurrencyInput;
+    private javax.swing.JPanel restockCurrencyPanel;
+    private javax.swing.JTextField restockInput;
+    private javax.swing.JRadioButton restockSlotButton;
+    private javax.swing.JPanel restockSlotPanel;
+    private javax.swing.JButton returnToMaintenanceButton;
+    private javax.swing.JButton returnToMaintenanceButton2;
+    private javax.swing.JButton returnToMaintenanceButton3;
+    private javax.swing.JButton returnToMaintenanceButton4;
+    private javax.swing.JButton returnToMaintenanceButton5;
+    private javax.swing.JButton returnToMaintenanceButton6;
+    private javax.swing.JButton returnToMaintenanceButton7;
+    private javax.swing.JButton returnToMaintenanceButton8;
+    private javax.swing.JButton returnToMaintenanceButton9;
     private javax.swing.JButton transactionCancelButton;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration
 }
