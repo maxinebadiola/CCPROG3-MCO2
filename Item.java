@@ -1,8 +1,27 @@
+public abstract class Item {
+   protected String name; 
+   protected int price;
+   protected int calories; 
 
-//Inherits Item (ex. Yogurt, Strawberry, Blueberry etc...)
-public class Item extends Product {
-   //https://www.w3schools.com/java/ref_keyword_super.asp
    public Item(String name, int price, int calories) {
-      super(name, price, calories); //calls constructor of parent class
+      this.name = name;
+      this.price = price;
+      this.calories = calories;
    }
+
+   public String getName() {
+      return name;
+   }
+   public int getPrice() {
+      return price;
+   }
+   public int getCalories() {
+      return calories;
+   }
+
+   //ONLY Price is editable
+   public void setPrice(int price) {
+      this.price = price;
+   }
+
 }
