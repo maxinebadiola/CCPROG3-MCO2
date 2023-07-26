@@ -64,6 +64,17 @@ public class Machine {
       return result;
    }
 
+   //Determines if a payment is enough for the combo price
+   public boolean isValidPayment(int comboPrice, int totalPayment) {
+      boolean result = false;
+      
+      if (result = totalPayment >= comboPrice){
+         result = true;
+      }
+      
+      return result;
+   }
+
    //Calculates VALUE the total change 
    public int calculateTotalChange(int productPrice, int totalPayment) {
       int change = 0;
