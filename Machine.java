@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Machine {
-   private ArrayList<Slot> slotList; //list of slots
+   protected ArrayList<Slot> slotList; //list of slots
    private ArrayList<Transaction> transactionList; //list of all transactions
    private ArrayList<Currency> currencyStock; //list of all currency
 
@@ -336,5 +336,16 @@ public class Machine {
    public void addProduct(Product product, int stock) {
       Slot slot = new Slot(product, stock);
       slotList.add(slot);
+   }
+
+
+
+   //Find slot by Product 
+   public Slot findSlotByProduct(Product product) {
+      for (Slot slot : slotList) {
+         if (slot.getProduct().equals(product))
+            return slot;
+      }
+      return null;
    }
 }

@@ -8,7 +8,7 @@ public class Special extends Machine {
    }
 
    //Generate Combo based on inputted ingredients
-   public Combo generateCombo(ArrayList<Item> ingredients) {
+   public Combo generateCombo(ArrayList<Product> ingredients) {
       return new Combo(ingredients);
    }
    // Customize the preparation process for Combo
@@ -19,7 +19,7 @@ public class Special extends Machine {
       preparationSteps.append("Preparing Cup...\n");
       preparationSteps.append("Dispensing Yogurt...\n");
 
-      //ArrayList<Item> comboIngredients = combo.getIngredients();
+      //ArrayList<Product> comboIngredients = combo.getIngredients();
 
       preparationSteps.append("Topping with ").append(combo.getName().substring(12)).append("...\n");
       preparationSteps.append("Serving ").append(combo.getName()).append("...\n");
@@ -27,5 +27,4 @@ public class Special extends Machine {
 
       return preparationSteps.toString();
    }
-
 }

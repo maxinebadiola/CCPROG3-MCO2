@@ -62,4 +62,12 @@ public class Slot {
       return stock;
    }
 
+   // //FOR COMBO: Remove multiple ingredients from stock
+   // public void removeComboIngredients(int amount) {
+   //    for (int i = 0; i < amount; i++) {
+   //       stock.remove(0);
+   //    }
+   //    updateSlotAvailability();
+   // }
+   
 }

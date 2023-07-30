@@ -12,31 +12,23 @@ public class Test
       machine.initializeCurrencies();
 
       // #1 Intialize Items
-      Item yogurt = new Item("Yogurt", 50, 500);
-      Item apple = new Item("Apple", 10, 100);
-      Item banana = new Item("Banana", 20, 200);
-      Item mango = new Item("Mango", 30, 300);
+      Product yogurt = new Product("Yogurt", 50, 500);
+      Product apple = new Product("Apple", 10, 100);
+      Product banana = new Product("Banana", 20, 200);
+      Product mango = new Product("Mango", 30, 300);
+      Product strawberry = new Product("Strawberry", 40, 400);
 
 
 
       // #2 Assign Products to Slot (product stock)
       machine.addProduct(yogurt, 5); //YOGURT ALWAYS SLOT(0)
       machine.addProduct(apple, 5);
-      machine.addProduct(banana, 3);
+      machine.addProduct(banana, 4);
       machine.addProduct(mango, 2);
+      machine.addProduct(strawberry, 2);
 
-      
-
-      // //Print out all products in machine + stock
-      // System.out.println("PRODUCTS ");
-      // System.out.println("----------------------------------");
-      // ArrayList<Slot> slotList = machine.getSlotList();
-      // for (int i = 0; i < slotList.size(); i++) {
-      //    Slot slot = slotList.get(i);
-      //    System.out.println("[" + i + "] " + slot.getProduct().getName() + " [Price: PHP " + slot.getProduct().getPrice() + "] " 
-      //    + "[Stock: "+ slot.getStock()+"] " + "[Calories: "+slot.getProduct().getCalories() + "] ");
-      // }
-
+      //SPECIAL IS INSTANTIATED AFTER SLOT INTIALIZATION
+      Special special = new Special();
       // //Print Out -stock : Product []
       // System.out.println("Stock");
       // System.out.println("----------------------------------");
@@ -82,23 +74,36 @@ public class Test
       //    System.out.println("[" + i + "] " + stock.get(i).getName());
       // }
 
-      //CREATE COMBO
-      ArrayList<Item>Combo1 = new ArrayList<Item>();
-      Combo1.add(yogurt);
-      Combo1.add(apple);
-      Combo1.add(banana);
-      Combo1.add(mango);
+     // CREATE COMBO
+     ArrayList<Product> comboIngredients = new ArrayList<Product>();
+     comboIngredients.add(yogurt);
+     comboIngredients.add(apple);
+     comboIngredients.add(apple);
+     comboIngredients.add(banana);
+     comboIngredients.add(banana);
+     comboIngredients.add(banana);
+     comboIngredients.add(mango);
+     comboIngredients.add(mango);
+     comboIngredients.add(strawberry);
+     comboIngredients.add(strawberry);
 
+     Combo combo = new Combo(comboIngredients);
+     System.out.println("Combo Name: " + combo.getName());
+     System.out.println("Combo Price: " + combo.getPrice());
+     System.out.println("Combo Calories: " + combo.getCalories());
 
-      Combo combo = new Combo(Combo1);
-      System.out.println("Combo Name: " + combo.getName());
-      System.out.println("Combo Price: " + combo.getPrice());
-      System.out.println("Combo Calories: " + combo.getCalories());
-      
-      //TEST PREPARATION 
-      Special special = new Special();
-      String preparationSteps = special.preparingCombo(combo);
-      System.out.println(preparationSteps);
-
+     // TEST PREPARATION
+     String preparationSteps = special.preparingCombo(combo);
+     System.out.println(preparationSteps);
+     
+     // Print out all products in machine + stock
+     System.out.println("PRODUCTS ");
+     System.out.println("----------------------------------");
+     ArrayList<Slot> slotList = machine.getSlotList();
+     for (int i = 0; i < slotList.size(); i++) {
+        Slot slot = slotList.get(i);
+        System.out.println("[" + i + "] " + slot.getProduct().getName() + " [Price: PHP " + slot.getProduct().getPrice()
+              + "] " + "[Stock: " + slot.getStock() + "] " + "[Calories: " + slot.getProduct().getCalories() + "] ");
+     }
    }
 }
