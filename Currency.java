@@ -1,3 +1,5 @@
+package javaproject9;
+
 public class Currency {
 
    private int value;
@@ -5,7 +7,7 @@ public class Currency {
 
    public Currency(int value, int quantity) {
       this.value = value;
-      this.quantity  = quantity;
+      this.quantity = quantity;
    }
 
    public int getValue() {
