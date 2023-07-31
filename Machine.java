@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Machine {
    protected ArrayList<Slot> slotList; //list of slots
@@ -46,12 +47,13 @@ public class Machine {
    }
 
    //Calculates the value of the payment inserted 
-   public int calculateTotalPayment(ArrayList<Currency> paymentDenominations) {
+   public int calculateTotalPayment(HashMap<Currency, Integer> paymentDenominations) {
       int totalPayment = 0;
-      for (Currency currency : paymentDenominations) { //loop through payment denominations
-            totalPayment += currency.getValue() * currency.getQuantity();
+      for (Currency currency : paymentDenominations.keySet()) {
+         int quantity = paymentDenominations.get(currency);
+         totalPayment += currency.getValue() * quantity;
       }
-         return totalPayment;
+      return totalPayment;
    }
 
 
@@ -74,6 +76,21 @@ public class Machine {
       
       return result;
    }
+
+   //Determines if a payment is enough for the combo price
+   public boolean validPayments(HashMap<Currency, Integer> selectedCurrencies) {
+
+      boolean nullCount = true;
+      for (Integer count : selectedCurrencies.values()) {
+         if (count != null && count != 0) {
+            nullCount = false;
+            break;
+         }
+      }
+      
+      return nullCount;
+   }
+
 
    //Calculates VALUE the total change 
    public int calculateTotalChange(int productPrice, int totalPayment) {
@@ -142,6 +159,66 @@ public class Machine {
       }
       return changeString.toString();
    }
+   
+// Purchase a product in the RVM
+public int performRVMPurchase(String selectedProduct, int totalPayment, int change) {
+    int money = 0;
+    
+    int slotIndex = -1;
+
+    for (int i = 0; i < getSlotList().size(); i++) {
+        Slot slot = getSlotList().get(i);
+        if (slot.getProduct().getName().equals(selectedProduct)) {
+            slotIndex = i;
+        }
+    }
+
+    if (isValidSlotAndPayment(slotIndex, totalPayment)) {
+        int productPrice = getSlot(slotIndex).getProduct().getPrice();
+        change = calculateTotalChange(productPrice, totalPayment);
+
+        // VALIDATION -> CALCULATE IF CURRENCY STOCK IS SUFFICIENT FOR CHANGE
+        if (stockHasSufficientChange(change)) {
+            generateTransaction(totalPayment, getSlot(slotIndex).getProduct(), change);
+            // DISPENSE PRODUCT (UPDATES SLOT STOCK ETC.)
+            updateStock(slotIndex);
+
+            money = change;
+        }
+    }
+    else{
+    money = totalPayment;
+    
+    }
+    
+    return money;
+}
+
+       public int performComboPurchase(Combo comboItems, int totalPayment) {
+        int money = 0;
+        int change;
+           
+        int comboPrice = comboItems.getPrice();
+        change = calculateTotalChange(comboPrice, totalPayment);
+
+        if (isValidPayment(comboPrice, totalPayment)) {
+
+            // VALIDATION -> CALCULATE IF CURRENCY STOCK IS SUFFICIENT FOR CHANGE
+            if (stockHasSufficientChange(change)) {
+                generateTransaction(totalPayment, comboItems, change);
+                // DISPENSE PRODUCT (UPDATES SLOT STOCK ETC.)
+                updateComboStock(comboItems);
+                return change;
+            }
+        }
+        
+        else{
+ 
+        money = totalPayment;
+        }
+        
+        return money;
+    }
 
    /************************************************************************************* */
    //AFTER TRANSACTION -> UPDATE PARAMETERS
@@ -156,10 +233,9 @@ public class Machine {
    }
 
    //adds the payment denominations to the currency stock
-   public void updateCurrencyStockWithPayment(ArrayList<Currency> paymentDenominations) {
-      for (int i = 0; i < currencyStock.size(); i++) {
-         Currency currency = currencyStock.get(i);
-         int quantity = paymentDenominations.get(i).getQuantity();
+  public void updateCurrencyStockWithPayment(HashMap<Currency, Integer> paymentDenominations) {
+      for (Currency currency : paymentDenominations.keySet()) {
+         int quantity = paymentDenominations.get(currency);
          currency.setQuantity(currency.getQuantity() + quantity);
       }
    }
@@ -170,12 +246,28 @@ public class Machine {
       slot.dispenseProduct();
    }
 
+      // UPDATE Product Stock (AFTER SUCESSFUL TRANSACTION)
+   public void updateComboStock(Combo items) {
+      ArrayList<Product> itemList = items.getIngredients();
+      ArrayList<Slot> slotList = getSlotList();
+
+      for (Product item : itemList) {
+         for (Slot slot : slotList) {
+            if (item.equals(slot.getProduct())) {
+               slot.dispenseProduct();
+
+            }
+         }
+      }
+   }
+
    //Generate Transaction (AFTER SUCESSFUL TRANSACTION)
-   public Transaction generateTransaction(int payment, Product product, int change) {
+   public Transaction generateTransaction(int payment, Item product, int change) {
       Transaction transaction = new Transaction(payment, product, change); //create transaction
       transactionList.add(transaction); //add to list
       return transaction;
    }
+   
    
    //Clear Transaction List (after restock)
    public void clearTransactionList() {
@@ -222,7 +314,7 @@ public class Machine {
       Slot slot = slotList.get(slotIndex);
       slot.editPrice(newPrice);
    }
-
+   
    //Return all Transactions
    public ArrayList<Transaction> getTransactions() {
       return transactionList;
@@ -338,8 +430,6 @@ public class Machine {
       slotList.add(slot);
    }
 
-
-
    //Find slot by Product 
    public Slot findSlotByProduct(Product product) {
       for (Slot slot : slotList) {
@@ -348,4 +438,17 @@ public class Machine {
       }
       return null;
    }
+   
+    //Find slotIndex by Product name
+   public int findSlotIndexByProduct(String name) {
+           int slotIndex = -1;
+        for (int i = 0; i < getSlotList().size(); i++) {
+            Slot slot = getSlotList().get(i);
+            if (slot.getProduct().getName().equals(name)) {
+                slotIndex = i;
+                break;
+            }
+        }
+        return slotIndex;
+}
 }
