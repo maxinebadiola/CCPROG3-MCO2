@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Machine {
    protected ArrayList<Slot> slotList; //list of slots
-   private ArrayList<Transaction> transactionList; //list of all transactions
-   private ArrayList<Currency> currencyStock; //list of all currency
+   protected ArrayList<Transaction> transactionList; //list of all transactions
+   protected ArrayList<Currency> currencyStock; //list of all currency
 
    public Machine() {
       slotList = new ArrayList<>();

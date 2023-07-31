@@ -27,4 +27,14 @@ public class Special extends Machine {
 
       return preparationSteps.toString();
    }
+
+  //Ovveride Machine generateTransaction
+  //Generate Transaction (AFTER SUCESSFUL TRANSACTION)
+  public Transaction generateTransaction(int payment, Combo combo, int change) {
+      //Convert Combo to Product 
+      Product product = new Product(combo.getName(), combo.getPrice(),combo.getCalories());
+      Transaction transaction = new Transaction(payment, product, change); //create transaction
+      transactionList.add(transaction); //add to list
+      return transaction;
+   }
 }
