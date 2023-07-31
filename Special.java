@@ -1,3 +1,4 @@
+package javaproject9;
 import java.util.ArrayList;
 
 public class Special extends Machine {
@@ -30,15 +31,6 @@ public class Special extends Machine {
       return preparationSteps.toString();
    }
 
-  //Ovveride Machine generateTransaction
-  //Generate Transaction (AFTER SUCESSFUL TRANSACTION)
-  public Transaction generateTransaction(int payment, Combo combo, int change) {
-      //Convert Combo to Product 
-      Product product = new Product(combo.getName(), combo.getPrice(),combo.getCalories());
-      Transaction transaction = new Transaction(payment, product, change); //create transaction
-      transactionList.add(transaction); //add to list
-      return transaction;
-   }
 
    //SVM Exclusive: List of all ingredients sold for combo
    public ArrayList<Product> updateIngredientsSold(Combo combo) {
@@ -72,4 +64,32 @@ public class Special extends Machine {
       }
       return salesReport;
    }
+   
+        public int performComboPurchase(Combo comboItems, int totalPayment) {
+        int money = 0;
+        int change;
+           
+        int comboPrice = comboItems.getPrice();
+        change = calculateTotalChange(comboPrice, totalPayment);
+
+        if (isValidPayment(comboPrice, totalPayment)) {
+
+            // VALIDATION -> CALCULATE IF CURRENCY STOCK IS SUFFICIENT FOR CHANGE
+            if (stockHasSufficientChange(change)) {
+                generateTransaction(totalPayment, comboItems, change);
+                updateIngredientsSold(comboItems);
+                // DISPENSE PRODUCT (UPDATES SLOT STOCK ETC.)
+                updateComboStock(comboItems);
+                return change;
+            }
+        }
+        
+        else{
+ 
+        money = totalPayment;
+        }
+        
+        return money;
+    }
+        
 }
