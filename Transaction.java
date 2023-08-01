@@ -19,13 +19,13 @@ public class Transaction {
     }
 
     //Create Arraylist with 1 product
-    public ArrayList<Product> intializeProduct(Product product) {
+    private ArrayList<Product> intializeProduct(Product product) {
         ArrayList<Product> products = new ArrayList<Product>();
         products.add(product);
         return products;
     }
     //Get ingredients of the combo
-    public ArrayList<Product> intializeCombo(Combo combo) {
+    private ArrayList<Product> intializeCombo(Combo combo) {
         ArrayList<Product> ingredients = new ArrayList<Product>();
         for (int i = 0; i < combo.getIngredients().size(); i++) {
             ingredients.add(combo.getIngredients().get(i));
