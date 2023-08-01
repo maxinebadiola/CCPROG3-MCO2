@@ -47,6 +47,7 @@ public class Combo extends Product {
       return numInstances + " " + ProductName;
    }
 
+   //HELPER FUNCTIONS: Counting Ingredients in Combo
    private int getProductInstances(String ProductName) {
       int numInstances = 0;
       for (Product Product : ingredients) {  
@@ -56,8 +57,6 @@ public class Combo extends Product {
       }
       return numInstances;
    }
-
-
    
    private int calculateComboPrice() {
       int totalPrice = 0;

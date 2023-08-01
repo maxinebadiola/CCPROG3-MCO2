@@ -286,22 +286,29 @@ public class Machine {
       return true;
    }
    //Sales Report, print quantity of each product sold
+   
    public ArrayList<String> salesReport() {
-      ArrayList<String> salesReport = new ArrayList<>(); 
-      for (Slot slot : slotList) { //loop through all slots
-         Product product = slot.getProduct(); //get product in slot
-         int quantitySold = 0;
-         for (Transaction transaction : transactionList) { //loop through all transactions
-            if (transaction.getProduct().equals(product)) { //if product in transaction is same as product in slot
-               quantitySold++; //increment by 1 (1 sold per transaction)
-            }
-         }
-         salesReport.add(product.getName() + " x " + quantitySold); //add to sales report
+      ArrayList<String> salesReport = new ArrayList<>();
+      for (Slot slot : slotList) { // loop through all slots
+          Product product = slot.getProduct(); // get product in slot
+          int quantitySold = 0;
+          for (Transaction transaction : transactionList) { // loop through all transactions
+              ArrayList<Product> productsInTransaction = transaction.getProducts();
+
+              // Find the quantity of the specific product in the current transaction
+              int quantityInTransaction = 0;
+              for (Product p : productsInTransaction) {
+                  if (p.equals(product)) {
+                      quantityInTransaction++;
+                  }
+              }
+              quantitySold += quantityInTransaction; // increment by the quantity in this transaction
+          }
+          salesReport.add(product.getName() + " x " + quantitySold); // add to sales report
       }
       return salesReport;
-   }
+  }
    
-
    //Calculate TOTAL Sales
    public int calculateTotalSales() {
       int totalSales = 0;
@@ -338,14 +345,4 @@ public class Machine {
       slotList.add(slot);
    }
 
-
-
-   //Find slot by Product 
-   public Slot findSlotByProduct(Product product) {
-      for (Slot slot : slotList) {
-         if (slot.getProduct().equals(product))
-            return slot;
-      }
-      return null;
-   }
 }
