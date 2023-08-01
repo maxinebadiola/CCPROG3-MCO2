@@ -38,19 +38,6 @@ public class Special extends Machine {
       return transaction;
    }
 
-   //SVM Exclusive: List of all ingredients sold for combo
-   public ArrayList<Product> updateIngredientsSold(Combo combo) {
-      ArrayList<Product> ingredients = combo.getIngredients();
-      for (Product ingredient : ingredients) {
-         ingredientsSold.add(ingredient);
-      }
-      return ingredientsSold;
-   }
-
-   public void clearIngredientsSold() {
-      ingredientsSold.clear();
-   }
-
    // //Find slot by Product 
    // private Slot findSlotByProduct(Product product) {
    //    for (Slot slot : slotList) {
