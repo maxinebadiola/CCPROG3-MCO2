@@ -26,7 +26,10 @@ public class Special extends Machine {
 
       return preparationSteps.toString();
    }
-
+   public boolean yogurtAvailability() {
+      return slotList.get(0).getAvailability();
+   }
+   
    // //Find slot by Product 
    // private Slot findSlotByProduct(Product product) {
    //    for (Slot slot : slotList) {
