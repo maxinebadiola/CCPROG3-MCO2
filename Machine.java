@@ -164,15 +164,9 @@ public class Machine {
       }
    }
 
-   //UPDATE Product Stock (AFTER SUCESSFUL TRANSACTION)
-   public void updateStock(int slotIndex) {
-      Slot slot = slotList.get(slotIndex);
-      slot.dispenseProduct();
-   }
-
    //Generate Transaction (AFTER SUCESSFUL TRANSACTION)
-   public Transaction generateTransaction(int payment, Product product, int change) {
-      Transaction transaction = new Transaction(payment, product, change); //create transaction
+   public Transaction generateTransaction(int payment, Item item, int change) {
+      Transaction transaction = new Transaction(payment, item, change); //create transaction
       transactionList.add(transaction); //add to list
       return transaction;
    }
@@ -285,29 +279,50 @@ public class Machine {
       }
       return true;
    }
-   //Sales Report, print quantity of each product sold
-   
+//    //Sales Report, print quantity of each item sold
+//    public ArrayList<String> salesReport() {
+//       ArrayList<String> salesReport = new ArrayList<>();
+//       for (Slot slot : slotList) { // loop through all slots
+//           Product product = slot.getProduct(); // get product in slot
+//           int quantitySold = 0;
+//           for (Transaction transaction : transactionList) { // loop through all transactions
+//               ArrayList<Product> productsInTransaction = transaction.getProducts();
+
+//               // Find the quantity of the specific product in the current transaction
+//               int quantityInTransaction = 0;
+//               for (Product p : productsInTransaction) {
+//                   if (p.equals(product)) {
+//                       quantityInTransaction++;
+//                   }
+//               }
+//               quantitySold += quantityInTransaction; // increment by the quantity in this transaction
+//           }
+//           salesReport.add(product.getName() + " x " + quantitySold); // add to sales report
+//       }                          
+//       return salesReport;  
+//   }
    public ArrayList<String> salesReport() {
       ArrayList<String> salesReport = new ArrayList<>();
       for (Slot slot : slotList) { // loop through all slots
-          Product product = slot.getProduct(); // get product in slot
-          int quantitySold = 0;
-          for (Transaction transaction : transactionList) { // loop through all transactions
-              ArrayList<Product> productsInTransaction = transaction.getProducts();
-
-              // Find the quantity of the specific product in the current transaction
-              int quantityInTransaction = 0;
-              for (Product p : productsInTransaction) {
-                  if (p.equals(product)) {
-                      quantityInTransaction++;
+         Product product = slot.getProduct(); // get product in slot
+         int quantitySold = 0;
+         for (Transaction transaction : transactionList) { // loop through all transactions
+            ArrayList<Product> productsInTransaction = transaction.getProducts();
+            // Find the quantity of the specific product in the current transaction
+            int quantityInTransaction = 0;
+            for (Product p : productsInTransaction) {
+                  // Compare product names instead of product objects
+                  if (p.getName().equals(product.getName())) {
+                     quantityInTransaction++;
                   }
-              }
-              quantitySold += quantityInTransaction; // increment by the quantity in this transaction
-          }
-          salesReport.add(product.getName() + " x " + quantitySold); // add to sales report
+            }
+            quantitySold += quantityInTransaction; // increment by the quantity in this transaction
+         }
+         salesReport.add(product.getName() + " x " + quantitySold); // add to sales report
       }
       return salesReport;
-  }
+   }
+      
    
    //Calculate TOTAL Sales
    public int calculateTotalSales() {
@@ -344,5 +359,4 @@ public class Machine {
       Slot slot = new Slot(product, stock);
       slotList.add(slot);
    }
-
 }

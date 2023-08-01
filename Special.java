@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 
 public class Special extends Machine {
-
-   private ArrayList<Product> ingredientsSold; //list of ingredients sold
    //NOT SURE
    public Special() {
       super();
@@ -27,15 +25,6 @@ public class Special extends Machine {
       preparationSteps.append("Order Complete!");
 
       return preparationSteps.toString();
-   }
-
-  //Ovveride Machine generateTransaction
-  //Generate Transaction (AFTER SUCESSFUL TRANSACTION)
-  public Transaction generateTransaction(int payment, Combo combo, int change) {
-      //Convert Combo to Product 
-      Transaction transaction = new Transaction(payment, combo, change); //create transaction
-      transactionList.add(transaction); //add to list
-      return transaction;
    }
 
    // //Find slot by Product 

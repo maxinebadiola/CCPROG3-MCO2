@@ -46,7 +46,29 @@ public class Test
       Combo combo = special.generateCombo(comboIngredients);
       special.generateTransaction(100, combo, 50);
 
-      System.out.println(special.salesReport());
+      // Print all transactions
+      ArrayList<Transaction> transactions = special.getTransactions();
+      for (int i = 0; i < transactions.size(); i++) {
+          Transaction transaction = transactions.get(i);
+          System.out.println("Transaction " + (i + 1) + ":");
+          System.out.println("Payment: " + transaction.getPayment());
+          System.out.println("Change: " + transaction.getChange());
+
+          ArrayList<Product> products = transaction.getProducts();
+          System.out.println("Items in transaction:");
+          for (Product product : products) {
+              System.out.println("- " + product.getName());
+          }
+
+          System.out.println();
+      }
+
+      // Print sales report
+      System.out.println("Sales Report:");
+      ArrayList<String> salesReport = special.salesReport();
+      for (String itemSold : salesReport) {
+          System.out.println(itemSold);
+      }
 
 
 
