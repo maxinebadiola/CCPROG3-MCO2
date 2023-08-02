@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Combo extends Product {
-   private ArrayList<Product> ingredients;
+   private ArrayList<Product> ingredients; //list of ingredients in combo
    
    public Combo(ArrayList<Product> ingredients) {
       super("", 0, 0); //NULL for name, price, calories
@@ -12,29 +12,30 @@ public class Combo extends Product {
       this.price = calculateComboPrice();
       this.calories = calculateComboCalories();
    }
-   
-      private String initializeComboName() {
-      StringBuilder comboName = new StringBuilder("Yogurt with ");
-      int numIngredients = ingredients.size();
-      Set<String> addedIngredients = new HashSet<>();
+   //Creates the Combo Name (ex. Yogurt with 1 Mango etc...)
+   private String initializeComboName() {
+   StringBuilder comboName = new StringBuilder("Yogurt with ");
+   int numIngredients = ingredients.size();
+   Set<String> addedIngredients = new HashSet<>();
 
-      for (int i = 1; i < numIngredients; i++) {
-         Product Product = ingredients.get(i);
-         String ProductName = Product.getName();
-         if (!addedIngredients.contains(ProductName)) 
-         {
-            int numInstances = getProductInstances(ProductName);
-            comboName.append(getProductString(ProductName, numInstances));
-            addedIngredients.add(ProductName);
-            if (i < numIngredients - 1) 
-               comboName.append(", ");
-         }
+   for (int i = 1; i < numIngredients; i++) {
+      Product Product = ingredients.get(i);
+      String ProductName = Product.getName();
+      if (!addedIngredients.contains(ProductName)) 
+      {
+         int numInstances = getProductInstances(ProductName);
+         comboName.append(getProductString(ProductName, numInstances));
+         addedIngredients.add(ProductName);
+         if (i < numIngredients - 1) 
+            comboName.append(", ");
       }
+   }
 
-         return comboName.toString();
-      }  
+      return comboName.toString();
+   }  
 
-   //Grammar Stuff (s)
+   //Handles product name grammar if multiple of the same product
+   // Example: Mango -> Mangoes, Strawberry -> Strawberries etc...
    private String getProductString(String ProductName, int numInstances) {
       if (numInstances > 1) {
          if (ProductName.endsWith("o")) 
@@ -47,7 +48,7 @@ public class Combo extends Product {
       return numInstances + " " + ProductName;
    }
 
-   //HELPER FUNCTIONS: Counting Ingredients in Combo
+   //HELPER FUNCTIONS: Counting Ingredients in Combo (2 Mangoes, 1 Strawberry etc...)
    private int getProductInstances(String ProductName) {
       int numInstances = 0;
       for (Product Product : ingredients) {  
@@ -57,7 +58,8 @@ public class Combo extends Product {
       }
       return numInstances;
    }
-   
+
+   //HELPER FUNCTIONS: Adds all ingredients price 
    private int calculateComboPrice() {
       int totalPrice = 0;
       for (Product Product : ingredients) {
@@ -65,7 +67,7 @@ public class Combo extends Product {
       }
       return totalPrice;
    }
-   
+   //HELPER FUNCTIONS: Adds calories of ingredients
    private int calculateComboCalories() {
       int totalCalories = 0;
       for (Product Product : ingredients) {
@@ -73,7 +75,7 @@ public class Combo extends Product {
       }
       return totalCalories;
    }
-
+   //Return ingredients of combo 
    public ArrayList<Product> getIngredients() {
       return ingredients;
    }

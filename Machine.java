@@ -199,12 +199,12 @@ public class Machine {
          return true;
       return false;
    }
-   //Restocking Slots
+   //Restock [1] Slot
    public void restockSlot(int slotIndex, int restockAmount) {
       Slot slot = slotList.get(slotIndex); //get slot
       slot.addStock(restockAmount);
    }
-
+   //Restock ALL Slots
    public void restockAllSlots(int restockAmount) {
       for (Slot slot : slotList) {
          slot.addStock(restockAmount);
@@ -222,17 +222,13 @@ public class Machine {
       return transactionList;
    }
    
-   // //Restock Currency (NO LIMIT)
-   // public void restockCurrency(int currencyIndex, int restockAmount) {
-   //    Currency currency = currencyStock.get(currencyIndex);
-   //    currency.setQuantity(currency.getQuantity() + restockAmount);
-   // }
+   //Restock all currency types
    public void restockAllCurrency (int restockAmount) {
       for (Currency currency : currencyStock) {
          currency.setQuantity(currency.getQuantity() + restockAmount);
       }
    }
-
+   //Restock specific currency type
    public void restockCurrency(int currencyValue, int restockAmount) {
       for (Currency currency : currencyStock) {
          if (currency.getValue() == currencyValue) {
@@ -268,7 +264,7 @@ public class Machine {
     }
       return false; // Invalid currency value
    }
-
+   //Collect ALL Currency types
    public boolean collectAllCurrency(int collectAmount) {
       for (Currency currency : currencyStock) {
          if (currency.getQuantity() < collectAmount) // check if all currency has enough stock
@@ -279,28 +275,13 @@ public class Machine {
       }
       return true;
    }
-//    //Sales Report, print quantity of each item sold
-//    public ArrayList<String> salesReport() {
-//       ArrayList<String> salesReport = new ArrayList<>();
-//       for (Slot slot : slotList) { // loop through all slots
-//           Product product = slot.getProduct(); // get product in slot
-//           int quantitySold = 0;
-//           for (Transaction transaction : transactionList) { // loop through all transactions
-//               ArrayList<Product> productsInTransaction = transaction.getProducts();
 
-//               // Find the quantity of the specific product in the current transaction
-//               int quantityInTransaction = 0;
-//               for (Product p : productsInTransaction) {
-//                   if (p.equals(product)) {
-//                       quantityInTransaction++;
-//                   }
-//               }
-//               quantitySold += quantityInTransaction; // increment by the quantity in this transaction
-//           }
-//           salesReport.add(product.getName() + " x " + quantitySold); // add to sales report
-//       }                          
-//       return salesReport;  
-//   }
+   //Sales Report, print quantity of each item 
+   /*
+    * Ex. 
+      Product x Amount Sold
+      Product2 x Amount Sold etc...
+    */
    public ArrayList<String> salesReport() {
       ArrayList<String> salesReport = new ArrayList<>();
       for (Slot slot : slotList) { // loop through all slots
@@ -324,7 +305,8 @@ public class Machine {
    }
       
    
-   //Calculate TOTAL Sales
+   //Calculate TOTAL Sales, Profit made
+   //Loop through all transactions, Calculate Payment - Change given
    public int calculateTotalSales() {
       int totalSales = 0;
       for (Transaction transaction : transactionList) {

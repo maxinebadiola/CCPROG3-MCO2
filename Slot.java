@@ -13,7 +13,7 @@ public class Slot {
 
    //Intialize Stock, int stock = number of product instances 
    //IN MAIN -> addStock(stock input,getProduct())
-   public ArrayList<Product> intializeStock(int stock, Product product) {
+   private ArrayList<Product> intializeStock(int stock, Product product) {
       ArrayList<Product> initialStock = new ArrayList<Product>();
       for (int i = 0; i < stock; i++) {
          initialStock.add(product);
@@ -62,12 +62,4 @@ public class Slot {
       return stock;
    }
 
-   // //FOR COMBO: Remove multiple ingredients from stock
-   // public void removeComboIngredients(int amount) {
-   //    for (int i = 0; i < amount; i++) {
-   //       stock.remove(0);
-   //    }
-   //    updateSlotAvailability();
-   // }
-   
 }

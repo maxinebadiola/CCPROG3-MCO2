@@ -9,6 +9,7 @@ public abstract class Item {
       this.calories = calories;
    }
 
+   //Getters and Setters
    public String getName() {
       return name;
    }

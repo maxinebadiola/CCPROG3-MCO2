@@ -5,7 +5,6 @@ public class Transaction {
     private ArrayList<Product> products;
     private int change; 
     
-    //Used in Machine + Special
     //Accepts Item(Product or Combo) but will be converted to ArrayList<Product>
     public Transaction(int payment, Item item, int change)
     {
@@ -18,10 +17,11 @@ public class Transaction {
     // Intialize Array of Items [1 Product from RVM or Combo Ingredients from SVM]
     // Returns ArrayList of Products
     public ArrayList<Product> intializeProduct(Item item) {
+        //If combo -> return combo ingredients
         if (item instanceof Combo){
             return ((Combo) item).getIngredients();
         }
-        else {
+        else { //if product -> create empty array, add 1 product
             ArrayList<Product> product = new ArrayList<Product>();
             product.add((Product) item);
             return product;
